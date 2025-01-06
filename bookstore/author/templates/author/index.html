@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titlepage %}         collection {% endblock%}
+{% block csspage %}
+<link rel="stylesheet" href="{%  static 'author/index.css'%}">
+{% endblock  %}
+<head>
+    <body>
+        {% block content%}
+        <section id='welcome'>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium rerum nemo nam nostrum, enim earum error, laboriosam illo neque sit fuga velit ad tenetur. Nihil facilis impedit necessitatibus at harum.</p>
+        </section>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium rerum nemo nam nostrum, enim earum error, laboriosam illo neque sit fuga velit ad tenetur. Nihil facilis impedit necessitatibus at harum.</p>
+        </section>
+        <section>
+            {% comment %} <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium rerum nemo nam nostrum, enim earum error, laboriosam illo neque sit fuga velit ad tenetur. Nihil facilis impedit necessitatibus at harum.</p> {% endcomment %}
+            <ul>
+                {% for book_in in book_collection  %}{% endfor %}
+                {% include "author/includes/post.html" %}
+                {% comment %} {% include "author/includes/post.html" %}
+                {% include "author/includes/post.html" %} {% endcomment %}
+            </ul>
+        </section>
+        {% endblock  %}
+    </body>
+</head>
